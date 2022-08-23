@@ -65,5 +65,20 @@ public class UserController {
 	public void delete(@PathVariable(name="id")Integer id) {
 		userServiceImpl.deleteUser(id);
 	}
+	
+	@GetMapping("/friends")
+	public List<Users> listarAmigos() {
+		return userServiceImpl.getFriends();
+	}
+	
+	@PostMapping("/friends")
+	public Users insertarAmigo(Users usuario) {
+		return userServiceImpl.addFriend(usuario);
+	}
+	
+	@DeleteMapping("/friends/{id}")
+	public void deleteAmigo(@PathVariable(name="id")Integer id) {
+		userServiceImpl.deleteFriend(id);
+	}
 
 }
