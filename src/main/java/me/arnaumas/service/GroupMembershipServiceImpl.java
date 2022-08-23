@@ -1,5 +1,7 @@
 package me.arnaumas.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,10 @@ public class GroupMembershipServiceImpl implements IGroupMembershipService {
 	public void leaveGroup(Integer id) {
 		groupMembershipDAO.deleteById(id);
 		
+	}
+
+	public List<GroupMembership> getAll() {
+		return groupMembershipDAO.findAll();
 	}
 
 }
