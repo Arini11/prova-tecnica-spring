@@ -20,8 +20,8 @@ public class UserServiceImpl implements IUserService {
 	}
 
 	@Override
-	public Users getByUsername(String username) {
-		return userDAO.findByUsername(username);
+	public Users getById(Integer id) {
+		return userDAO.findById(id).get();
 	}
 
 	@Override

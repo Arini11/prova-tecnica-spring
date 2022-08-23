@@ -35,21 +35,21 @@ public class UserController {
 		return userServiceImpl.saveUser(user);
 	}
 	
-	@GetMapping("/users/{username}")
-	public Users getBy(@PathVariable(name="username") String username) {
+	@GetMapping("/users/{id}")
+	public Users getBy(@PathVariable(name="id") Integer id) {
 		Users u = new Users();
-		u=userServiceImpl.getByUsername(username);
+		u=userServiceImpl.getById(id);
 				
 		return u;
 	}
 	
-	@PutMapping("/users/{username}")
-	public Users update(@PathVariable(name="username")String username,@RequestBody Users user) {
+	@PutMapping("/users/{id}")
+	public Users update(@PathVariable(name="id")Integer id,@RequestBody Users user) {
 		
 		Users u_seleccionado= new Users();
 		Users u_actualizado= new Users();
 		
-		u_seleccionado= userServiceImpl.getByUsername(username);
+		u_seleccionado= userServiceImpl.getById(id);
 		
 		u_seleccionado.setUsername(user.getUsername());
 		u_seleccionado.setEmail(user.getEmail());

@@ -6,7 +6,7 @@ import me.arnaumas.dto.Users;
 
 public interface IUserService {
 	public List<Users> getUsers(); //getAll
-	public Users getByUsername(String username); //getBy
+	public Users getById(Integer id); //getBy
 	public Users saveUser(Users user); // save
 	public Users updateUser(Users user); // update
 	public void deleteUser(Integer id); // delete
