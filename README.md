@@ -37,6 +37,9 @@ DELETE    /api/parties/{id}
 USERS
 GET       /api/users
 POST      /api/users
+GET       /api/friends
+POST      /api/friends
+DELETE    /api/friends/{id}
 GET       /api/users/{id}
 PUT       /api/users/{id}
 DELETE    /api/users/{id}
